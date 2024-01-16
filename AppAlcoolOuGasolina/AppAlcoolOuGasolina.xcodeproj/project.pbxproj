@@ -16,6 +16,11 @@
 		3F8820722B570ABF0041288E /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8820712B570ABF0041288E /* CalculatorVC.swift */; };
 		3F8820752B570B420041288E /* CalculatorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8820742B570B420041288E /* CalculatorScreen.swift */; };
 		3F8820782B57273E0041288E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8820772B57273E0041288E /* Alert.swift */; };
+		3F88207B2B572C2A0041288E /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88207A2B572C2A0041288E /* ResultVC.swift */; };
+		3F88207E2B572C5C0041288E /* ResultScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88207D2B572C5C0041288E /* ResultScreen.swift */; };
+		3F8820802B57394E0041288E /* BestFuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88207F2B57394E0041288E /* BestFuel.swift */; };
+		3F8820842B573E870041288E /* UITextField + Entension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8820832B573E870041288E /* UITextField + Entension.swift */; };
+		3F8820862B5747F30041288E /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8820852B5747F30041288E /* UIViewController + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		3F8820712B570ABF0041288E /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		3F8820742B570B420041288E /* CalculatorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorScreen.swift; sourceTree = "<group>"; };
 		3F8820772B57273E0041288E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		3F88207A2B572C2A0041288E /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		3F88207D2B572C5C0041288E /* ResultScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultScreen.swift; sourceTree = "<group>"; };
+		3F88207F2B57394E0041288E /* BestFuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFuel.swift; sourceTree = "<group>"; };
+		3F8820832B573E870041288E /* UITextField + Entension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Entension.swift"; sourceTree = "<group>"; };
+		3F8820852B5747F30041288E /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,9 @@
 		3F8820572B56F21F0041288E /* AppAlcoolOuGasolina */ = {
 			isa = PBXGroup;
 			children = (
+				3F8820822B573E680041288E /* Extension */,
+				3F8820812B573DAC0041288E /* Model */,
+				3F8820792B572C140041288E /* Result */,
 				3F8820762B5727280041288E /* Alert */,
 				3F8820702B570AA90041288E /* Calculator */,
 				3F88206C2B56F9270041288E /* Home */,
@@ -114,6 +127,40 @@
 				3F8820772B57273E0041288E /* Alert.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		3F8820792B572C140041288E /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				3F88207C2B572C2F0041288E /* Screen */,
+				3F88207A2B572C2A0041288E /* ResultVC.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		3F88207C2B572C2F0041288E /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3F88207D2B572C5C0041288E /* ResultScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		3F8820812B573DAC0041288E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F88207F2B57394E0041288E /* BestFuel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3F8820822B573E680041288E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3F8820832B573E870041288E /* UITextField + Entension.swift */,
+				3F8820852B5747F30041288E /* UIViewController + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,11 +234,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8820722B570ABF0041288E /* CalculatorVC.swift in Sources */,
+				3F88207B2B572C2A0041288E /* ResultVC.swift in Sources */,
 				3F88206F2B56F97A0041288E /* HomeScreen.swift in Sources */,
 				3F88205D2B56F21F0041288E /* HomeVC.swift in Sources */,
+				3F8820842B573E870041288E /* UITextField + Entension.swift in Sources */,
+				3F88207E2B572C5C0041288E /* ResultScreen.swift in Sources */,
 				3F8820592B56F21F0041288E /* AppDelegate.swift in Sources */,
 				3F88205B2B56F21F0041288E /* SceneDelegate.swift in Sources */,
+				3F8820802B57394E0041288E /* BestFuel.swift in Sources */,
 				3F8820752B570B420041288E /* CalculatorScreen.swift in Sources */,
+				3F8820862B5747F30041288E /* UIViewController + Extension.swift in Sources */,
 				3F8820782B57273E0041288E /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
