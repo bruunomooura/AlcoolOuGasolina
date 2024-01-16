@@ -13,7 +13,11 @@ protocol HomeScreenDelegate: AnyObject {
 
 class HomeScreen: UIView {
     
+    private weak var delegate: HomeScreenDelegate?
     
+    public func delegate(delegate: HomeScreenDelegate?) {
+        self.delegate = delegate
+    }
         
     lazy var backgroundImageView: UIImageView = {
         let image = UIImageView()
@@ -39,11 +43,12 @@ class HomeScreen: UIView {
         button.clipsToBounds = true
         button.layer.cornerRadius = 8
         button.backgroundColor = UIColor(red: 230/255, green: 0/255, blue: 127/255, alpha: 1.0)
+        button.addTarget(self, action: #selector(tappedStatButton), for: .touchUpInside)
         return button
     }()
     
-    @objc func statButton(_ sender: UIButton) {
-        
+    @objc func tappedStatButton(_ sender: UIButton) {
+        delegate?.tappedStartButton()
     }
     
     override init(frame: CGRect) {
@@ -65,7 +70,7 @@ class HomeScreen: UIView {
             backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            logoAppImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            logoAppImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 104),
             logoAppImageView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             logoAppImageView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             
