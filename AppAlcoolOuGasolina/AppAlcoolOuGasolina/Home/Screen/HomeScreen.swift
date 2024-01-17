@@ -43,12 +43,11 @@ class HomeScreen: UIView {
         button.clipsToBounds = true
         button.layer.cornerRadius = 8
         button.backgroundColor = UIColor(red: 230/255, green: 0/255, blue: 127/255, alpha: 1.0)
-        button.addTarget(self, action: #selector(tappedStatButton), for: .touchUpInside)
         return button
     }()
     
-    @objc func tappedStatButton(_ sender: UIButton) {
-        delegate?.tappedStartButton()
+    public func tappedStatButton(target: Any?, action: Selector) -> Void {
+        self.statButton.addTarget(target, action: action, for: .touchDown)
     }
     
     override init(frame: CGRect) {

@@ -22,6 +22,8 @@
 		3F8820802B57394E0041288E /* BestFuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F88207F2B57394E0041288E /* BestFuel.swift */; };
 		3F8820842B573E870041288E /* UITextField + Entension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8820832B573E870041288E /* UITextField + Entension.swift */; };
 		3F8820862B5747F30041288E /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8820852B5747F30041288E /* UIViewController + Extension.swift */; };
+		3FAC2BFC2B58700200037426 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC2BFB2B58700200037426 /* Coordinator.swift */; };
+		3FAC2BFE2B5870EB00037426 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC2BFD2B5870EB00037426 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		3F88207F2B57394E0041288E /* BestFuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFuel.swift; sourceTree = "<group>"; };
 		3F8820832B573E870041288E /* UITextField + Entension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Entension.swift"; sourceTree = "<group>"; };
 		3F8820852B5747F30041288E /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		3FAC2BFB2B58700200037426 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3FAC2BFD2B5870EB00037426 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +78,11 @@
 		3F8820572B56F21F0041288E /* AppAlcoolOuGasolina */ = {
 			isa = PBXGroup;
 			children = (
-				3F8820822B573E680041288E /* Extension */,
-				3F8820812B573DAC0041288E /* Model */,
-				3F8820792B572C140041288E /* Result */,
 				3F8820762B5727280041288E /* Alert */,
+				3F8820812B573DAC0041288E /* Model */,
+				3FAC2BFA2B586FEA00037426 /* Coordinator */,
+				3F8820822B573E680041288E /* Extension */,
+				3F8820792B572C140041288E /* Result */,
 				3F8820702B570AA90041288E /* Calculator */,
 				3F88206C2B56F9270041288E /* Home */,
 				3F8820582B56F21F0041288E /* AppDelegate.swift */,
@@ -165,6 +170,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		3FAC2BFA2B586FEA00037426 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3FAC2BFD2B5870EB00037426 /* MainCoordinator.swift */,
+				3FAC2BFB2B58700200037426 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,7 +256,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F8820722B570ABF0041288E /* CalculatorVC.swift in Sources */,
+				3FAC2BFE2B5870EB00037426 /* MainCoordinator.swift in Sources */,
 				3F88207B2B572C2A0041288E /* ResultVC.swift in Sources */,
+				3FAC2BFC2B58700200037426 /* Coordinator.swift in Sources */,
 				3F88206F2B56F97A0041288E /* HomeScreen.swift in Sources */,
 				3F88205D2B56F21F0041288E /* HomeVC.swift in Sources */,
 				3F8820842B573E870041288E /* UITextField + Entension.swift in Sources */,

@@ -9,11 +9,11 @@ import UIKit
 
 class HomeVC: UIViewController {
 
-    var screen: HomeScreen?
+    weak var coordinator: MainCoordinator?
+    private let myView = HomeScreen()
     
     override func loadView() {
-        screen = HomeScreen()
-        view = screen
+        self.view = self.myView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,8 +22,22 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        screen?.delegate(delegate: self)
+        self.setupNavigationBar()
+        self.setupButtonsAction()
     }
+    
+    func setupNavigationBar() {
+           self.title = "Home"
+           self.navigationController?.navigationBar.prefersLargeTitles = true
+       }
+    
+    func setupButtonsAction() {
+        self.myView.tappedStatButton(target: self, action: #selector(self.tappedStatButton(_:)))
+      }
+      
+      @IBAction func tappedStatButton(_ sender: Any) {
+          coordinator?.calculator()
+      }
 }
 
 extension HomeVC: HomeScreenDelegate {

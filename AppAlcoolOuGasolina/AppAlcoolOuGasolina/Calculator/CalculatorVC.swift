@@ -9,23 +9,47 @@ import UIKit
 
 class CalculatorVC: UIViewController {
     
-    var screen: CalculatorScreen?
+    weak var coordinator: MainCoordinator?
+    private let myView = CalculatorScreen()
     var alert: Alert?
     
+    var ethanolPrice: Double = 0
+    var gasPrice: Double = 0
+    
     override func loadView() {
-        screen = CalculatorScreen()
-        view = screen
+        self.view = self.myView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        screen?.delegate(delegate: self)
+        self.setupNavigationBar()
+        self.setupButtonsAction()
         alert = Alert(controller: self)
     }
+    
+    func setupNavigationBar() {
+           self.title = "Calculator"
+           self.navigationController?.navigationBar.prefersLargeTitles = true
+       }
+    
+    func setupButtonsAction() {
+        self.myView.tappedCalculateButton(target: self, action: #selector(self.tappedCalculateButton(_:)))
+          self.myView.tappedBackButton(target: self, action: #selector(self.tappedBackButton(_:)))
+      }
+      
+      @IBAction func tappedCalculateButton(_ sender: Any) {
+          tappedCalculateButton()
+          coordinator?.result(ethanolPrice: ethanolPrice, gasPrice: gasPrice)
+      }
+    
+    @IBAction func tappedBackButton(_ sender: Any) {
+        coordinator?.backView()
+    }
+        
     func validateTextFields() -> Bool {
-        guard let ethanolPrice = screen?.ethanolPriceTextField.text else { return false }
-        guard let gasPrice = screen?.gasPriceTextField.text else { return false }
+        guard let ethanolPrice = myView.ethanolPriceTextField.text else { return false }
+        guard let gasPrice = myView.gasPriceTextField.text else { return false }
         
         if ethanolPrice.isEmpty && gasPrice.isEmpty {
             alert?.showAlertInformation(title: "Atenção", message: "Informe os valores do álcool e da gasolina")
@@ -47,20 +71,9 @@ extension CalculatorVC: CalculatorScreenDelegate {
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             
-            let ethanolPrice: Double = (formatter.number(from: screen?.ethanolPriceTextField.text ?? "0.0") as? Double ?? 0.0)
+            ethanolPrice = (formatter.number(from: myView.ethanolPriceTextField.text ?? "0.0") as? Double ?? 0.0)
             
-            let gasPrice: Double = (formatter.number(from: screen?.gasPriceTextField.text ?? "0.0") as? Double ?? 0.0)
-            
-            var vc: ResultVC?
-            
-            if ethanolPrice / gasPrice > 0.7 {
-                print("Melhor utilizar Gasolina")
-                vc = ResultVC(bestFuel: .gas)
-            } else {
-                print("Melhor utilizar Álcool")
-                vc = ResultVC(bestFuel: .ethanol)
-            }
-            navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+            gasPrice = (formatter.number(from: myView.gasPriceTextField.text ?? "0.0") as? Double ?? 0.0)
         }
     }
     

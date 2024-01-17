@@ -71,24 +71,22 @@ class CalculatorScreen: UIView {
         button.clipsToBounds = true
         button.layer.cornerRadius = 8
         button.backgroundColor = UIColor(red: 230/255, green: 0/255, blue: 127/255, alpha: 1.0)
-        button.addTarget(self, action: #selector(tappedCalculateButton), for: .touchUpInside)
         return button
     }()
     
-    @objc func tappedCalculateButton(_ sender: UIButton) {
-        delegate?.tappedCalculateButton()
+    public func tappedCalculateButton(target: Any?, action: Selector) -> Void {
+        self.calculateButton.addTarget(target, action: action, for: .touchDown)
     }
     
     lazy var backButton: UIButton = {
         let button: UIButton = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "Botão Back"), for: .normal)
-        button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
     
-    @objc func tappedBackButton(_ sender: UIButton) {
-        delegate?.tappedBackButton()
+    public func tappedBackButton(target: Any?, action: Selector) -> Void {
+       self.backButton.addTarget(target, action: action, for: .touchDown)
     }
 
     override init(frame: CGRect) {
